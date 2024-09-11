@@ -37,6 +37,8 @@ class formularioView(View):
         
 class listarView(View):
     template_name = "listar.html"
-    
-    viewData = {}
-    
+    def get(self, request):
+        viewData = {}
+        vuelos = flight.objects.all()
+        viewData ["vuelos"] = vuelos
+        return render (request, self.template_name, viewData)

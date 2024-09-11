@@ -1,4 +1,14 @@
 {% extends "index.html" %}
 {% block content %}
+{% for vuelo in vuelos %}
+<div>
+    <p>{{vuelo.id}}</p>
+    <p>{{vuelo.nombre}}</p>
+    {% if vuelo.tipo == "nacional"%}
+    <p style="color: blue;">{{vuelo.precio}}</p>
+    {% endif %}
+    <p>{{vuelo.tipo}}</p>
+</div>
 
+{% endfor %}
 {% endblock %}
